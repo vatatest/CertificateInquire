@@ -7,42 +7,56 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.form.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script>
- 
-            function test() {
-            	var username = $("#username").val();
-            	var password = $("#password").val();
-            	var ispass = true;
-            	if(username ==""){
-            		alert("请输入用户名");
-            		return false;
-            	}
-            	if(password ==""){
-            		alert("请输入密码")
-            		return false;
-            	}
-                $("#login_form").ajaxSubmit({
-                    dataType : "json",
-                    clearForm : true,
-                    success : function(data) {
-                        if (data['result'] === 'false') {
-                            alert('用户名或密码错误');
-                            ispass=false;
-                        }
-                        else {
-                        	
-                        }
-                    }
-                });
-                return ispass;
-            });
+$(document).ready(function() {
+	 $("#login_form").submit(function(){
+		var username = $("#username").val();
+      	var password = $("#password").val();
+ 	  	if(username ==""){
+        	alert("请输入用户名");
+			return false;
+		}
+		if(password ==""){
+			alert("请输入密码")
+			return false;
+		}
+		$("#login_form").ajaxSubmit({
+            dataType : "json",
+            clearForm : true,
+            success : function(data) {
+                if (data['result'] === 'false') {
+                    alert('登录失败，用户名或密码错误');
+                } else {
+                	 window.location.href = "Admin.jsp";
+                }
+                return false;
+            }
+        });
+		return false;
+	 });
+});
+//             function test() {
+//             	var username = $("#username").val();
+//             	var password = $("#password").val();
+//             	var ispass = new Boolean(true);
+//             	var isntpass = new Boolean(false);
+//             	if(username ==""){
+//             		alert("请输入用户名");
+//             		return false;
+//             	}
+//             	if(password ==""){
+//             		alert("请输入密码")
+//             		return false;
+//             	}
+//                 return ispass;
+//             });
 
 </script>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 	<body>
-		<form action="login" method="post" id="login_form" onsubmit="return test()">
+		<form action="login" method="post" id="login_form" >
 			<div class="container">
 				<div class="row" >
 					<div class="col-md-4">
