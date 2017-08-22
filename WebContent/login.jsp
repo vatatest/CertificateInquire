@@ -37,22 +37,6 @@ $(document).ready(function() {
 		return false;
 	 });
 });
-//             function test() {
-//             	var username = $("#username").val();
-//             	var password = $("#password").val();
-//             	var ispass = new Boolean(true);
-//             	var isntpass = new Boolean(false);
-//             	if(username ==""){
-//             		alert("请输入用户名");
-//             		return false;
-//             	}
-//             	if(password ==""){
-//             		alert("请输入密码")
-//             		return false;
-//             	}
-//                 return ispass;
-//             });
-
 </script>
 </head>
 	<body>

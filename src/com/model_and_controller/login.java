@@ -16,7 +16,6 @@ public class login extends HttpServlet {
 		PrintWriter out =response.getWriter();
 		if(username.equals("admin") && password.equals("123456")) {
 			out.write("{\"result\":\"true\"}");
-//			response.sendRedirect("Admin.jsp");
 		}
 		else {
 			out.write("{\"result\":\"false\"}");

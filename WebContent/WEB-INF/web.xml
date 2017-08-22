@@ -29,4 +29,14 @@
     <servlet-name>workDataBase</servlet-name>
     <url-pattern>/workDataBase</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>workDataBasetest</display-name>
+    <servlet-name>workDataBasetest</servlet-name>
+    <servlet-class>com.model_and_controller.workDataBasetest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>workDataBasetest</servlet-name>
+    <url-pattern>/workDataBasetest</url-pattern>
+  </servlet-mapping>
 </web-app>
